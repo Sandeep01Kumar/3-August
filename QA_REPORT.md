@@ -12,7 +12,7 @@
 - Request 1, `curl -sS -D - http://127.0.0.1:3000/`, returned `HTTP/1.1 200 OK` with `Content-Type: text/plain` (no charset parameter) and `Content-Length: 14`.
 - The body was 14 bytes, byte-identical to the source literal `'Hello, World!\n'` [server.js:9] — comma, exclamation mark and trailing newline included — so the plain "Hello World" phrasing does not describe what the server sends.
 - Request 2, `curl -sS -o /dev/null -w 'status=%{http_code} bytes=%{size_download} type=%{content_type}\n' http://127.0.0.1:3000/`, wrote `status=200 bytes=14 type=text/plain`, identical to request 1, so the reply did not vary between the two requests.
-- The launch printed exactly one line, `Server running at http://127.0.0.1:3000/` [server.js:13], and the runtime under test is the installed `node` `v22.23.5` (`node --version`); no other version was installed or exercised.
+- The launch printed exactly one line, `Server running at http://127.0.0.1:3000/` [server.js:13], and the runtime under test is the installed `node` `v22.23.5` (`node --version`); no other version was installed or exercised, no tracked file changed, no dependency or lockfile entry was added, and `git status --porcelain` listed only this new untracked report when this record was written.
 
 ## Untested error paths
 

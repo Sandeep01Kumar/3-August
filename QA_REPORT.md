@@ -2,7 +2,7 @@
 
 ## Missing test coverage
 
-- No test framework, test file, fixture or coverage configuration exists anywhere in the tree: the tracked repository is four files at the root with no test directory, and neither the manifest nor the lockfile declares one [package.json:1-11] [package-lock.json:6-12].
+- No test framework, test file, fixture or coverage configuration exists anywhere in the tree: the root holds only the four tracked files this record leaves untouched — `server.js` [server.js:1], `package.json` [package.json:1-11], `package-lock.json` [package-lock.json:1-13], `README.md` [README.md:1-2] — plus this record itself, with no test directory, and neither the manifest nor the lockfile declares one.
 - `npm test` is the npm placeholder that prints `Error: no test specified` and exits 1 [package.json:7]; it was not run for this record, so no test result is claimed.
 - `lockfileVersion` is 3 with a single root package record and no `resolved` or `integrity` entry, so no test dependency and no transitive package is locked [package-lock.json:4] [package-lock.json:6-12].
 - Nothing asserts status, header or body, so the served contract can only be confirmed by the two manual requests below.
